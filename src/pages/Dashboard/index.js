@@ -9,7 +9,7 @@ class StarterPage extends Component {
         super(props);
         this.state={
             breadcrumbItems : [
-                { title : "Nazox", link : "#" },
+                { title : "Home", link : "#" },
                 { title : "Dashboard", link : "#" },
             ],
         }
