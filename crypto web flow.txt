@@ -1,0 +1,23 @@
+Crypto web app (ALL COINS AT ONE PLACE)
+
+Home page:
+
+1. Top nav bar display like 	Cyrpto | Stocks
+
+2. First display Top 5 crypto coins data in graph
+
+3. RHS Display Watchlist/favrouits coins
+
+4. 
+	-TOP GAINERS:
+	-TOP LOSSERS
+
+Display crypto coins data at home page.
+
+5. Show COIN data in chart js (GRAPH) for (1D,1Week,6M,1Y and so on)
+
+
+git branch -m main production
+git fetch origin
+git branch -u origin/production production
+git remote set-head origin -a
