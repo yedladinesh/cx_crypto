@@ -24,6 +24,8 @@
     "node-sass": "^4.13.1",
     "nouislider-react": "^3.3.7",
     "react": "^16.13.0",
+    "react-bootstrap-table-next": "^4.0.3",
+    "react-bootstrap-table2-paginator": "^2.1.2",
     "react-dom": "^16.13.0",
     "react-i18next": "^9.0.10",
     "react-perfect-scrollbar": "^1.5.8",

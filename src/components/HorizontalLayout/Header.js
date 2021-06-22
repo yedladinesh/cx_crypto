@@ -13,6 +13,7 @@ import { withNamespaces } from "react-i18next";
 // Import menuDropdown
 import LanguageDropdown from "../CommonForBoth/TopbarDropdown/LanguageDropdown";
 import NotificationDropdown from "../CommonForBoth/TopbarDropdown/NotificationDropdown";
+import BookmarkDropdown from "../CommonForBoth/TopbarDropdown/BookmarkDropdown";
 import ProfileMenu from "../CommonForBoth/TopbarDropdown/ProfileMenu";
 
 
@@ -102,7 +103,12 @@ class Header extends Component {
                 <div className="navbar-header">
                     <div className="d-flex">
                         <div className="navbar-brand-box">
-                            <Link to="/" className="logo logo-dark">
+                        <Link to="/" className="logo logo-dark">
+                        <span className="logo-lg">
+                            <p className="logo-caption">Cx-Crypto</p>
+                         </span>
+                        </Link>
+                            {/* <Link to="/" className="logo logo-dark">
                                 <span className="logo-sm">
                                     <img src={logoSmDark} alt="" height="22"/>
                                 </span>
@@ -118,7 +124,7 @@ class Header extends Component {
                                 <span className="logo-lg">
                                     <img src={logoLight} alt="" height="20"/>
                                 </span>
-                            </Link>
+                            </Link> */}
                         </div>
 
                         <Button color="none" type="button" size="sm" onClick={this.toggleMenu} className="px-3 font-size-24 d-lg-none header-item" data-toggle="collapse" data-target="#topnav-menu-content">
@@ -348,6 +354,8 @@ class Header extends Component {
 
                         <NotificationDropdown />
 
+                        <BookmarkDropdown />
+                        
                         <ProfileMenu />
 
                         {/* <div onClick={this.toggleRightbar} className="dropdown d-inline-block">

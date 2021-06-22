@@ -100,7 +100,7 @@ class Layout extends Component {
             toggleRightSidebar={this.toggleRightSidebar}
             openLeftMenuCallBack={this.openMenu}
           />
-          <Navbar menuOpen={this.state.isMenuOpened} />
+          
           <div className="main-content">
             {this.props.children}
             <Footer />
