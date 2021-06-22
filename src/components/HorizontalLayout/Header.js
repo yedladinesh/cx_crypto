@@ -133,7 +133,7 @@ class Header extends Component {
                             </div>
                         </Form>
 
-                        <Dropdown isOpen={this.state.isMegaMenu} toggle={() => this.setState({isMegaMenu : !this.state.isMegaMenu})} className="dropdown-mega d-none d-lg-block ml-2">
+                        {/* <Dropdown isOpen={this.state.isMegaMenu} toggle={() => this.setState({isMegaMenu : !this.state.isMegaMenu})} className="dropdown-mega d-none d-lg-block ml-2">
                             <DropdownToggle tag="button" type="button" className="btn header-item waves-effect">
                                 {this.props.t('Mega Menu')}{" "}
                                 <i className="mdi mdi-chevron-down"></i> 
@@ -262,7 +262,7 @@ class Header extends Component {
                                 </Row>
 
                             </DropdownMenu>
-                        </Dropdown>
+                        </Dropdown> */}
                     </div>
 
                     <div className="d-flex">
@@ -287,9 +287,9 @@ class Header extends Component {
                             </div>
                         </div>
 
-                        <LanguageDropdown />
+                        {/* <LanguageDropdown /> */}
 
-                        <Dropdown isOpen={this.state.isProfile} toggle={() => this.setState({isProfile : !this.state.isProfile})} className="d-none d-lg-inline-block ml-1">
+                        {/* <Dropdown isOpen={this.state.isProfile} toggle={() => this.setState({isProfile : !this.state.isProfile})} className="d-none d-lg-inline-block ml-1">
                             <DropdownToggle tag="button" type="button" className="btn header-item noti-icon waves-effect">
                                 <i className="ri-apps-2-line"></i>
                             </DropdownToggle>
@@ -338,23 +338,23 @@ class Header extends Component {
                                     </Row>
                                 </div>
                             </DropdownMenu>
-                        </Dropdown>
+                        </Dropdown> */}
 
-                        <div className="dropdown d-none d-lg-inline-block ml-1">
+                        {/* <div className="dropdown d-none d-lg-inline-block ml-1">
                             <Button type="button" color="none" onClick={this.toggleFullscreen} className="header-item noti-icon waves-effect" data-toggle="fullscreen">
                                 <i className="ri-fullscreen-line"></i>
                             </Button>
-                        </div>
+                        </div> */}
 
                         <NotificationDropdown />
 
                         <ProfileMenu />
 
-                        <div onClick={this.toggleRightbar} className="dropdown d-inline-block">
+                        {/* <div onClick={this.toggleRightbar} className="dropdown d-inline-block">
                             <Button type="button" color="none" className="header-item noti-icon right-bar-toggle waves-effect">
                                 <i className="ri-settings-2-line"></i>
                             </Button>
-                        </div>
+                        </div> */}
             
                     </div>
                 </div>
