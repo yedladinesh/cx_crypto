@@ -77,45 +77,33 @@ class StarterPage extends Component {
       <React.Fragment>
         <div className="page-content">
           <Container fluid>
-            <Row >
-              <Col xl={8}>
-                <h2>Index</h2>
-              </Col>
-              <Col xl={8}>
-                <Row>
-                  <MiniWidgets reports={this.state.reports} />
-                </Row>
-                {/* <TopCoins/> */}
-                {/* Display top gainer coins */}
-              </Col>
-        
-              <Col xl={4}>
-                {/* Display watchlist */}
-                <WatchList />
-              </Col>
-              <Col xl={8}>
-                <h2>Top Gainers</h2>
-              </Col>
-              <Col xl={8}>
-                <Row>
-                  <TopFiveCoins topFive={this.state.topFive} />
-                </Row>
-                {/* <TopCoins/> */}
-              </Col>
-
-              {/* Display top losers coins */}
-
-              <Col xl={8}>
-                <h2>Top Losers</h2>
-              </Col>
-              <Col xl={8}>
-                <Row>
-                  <TopFiveCoins topFive={this.state.topFive} />
-                </Row>
-                {/* <TopCoins/> */}
-              </Col>
-            </Row>
             <Row>
+              <Col xl={8}>
+                <Row>
+                  <Col md={12}>
+                    <h3>Index</h3>
+                  </Col>
+                  <MiniWidgets reports={this.state.reports} />
+
+                  {/* Top gainers*/}
+                  <Col md={12}>
+                    <h3>Top Gainers</h3>
+                  </Col>
+                  <TopFiveCoins topFive={this.state.topFive} />
+
+                  {/* Top losers */}
+                  <Col md={12}>
+                    <h3>Top Losers</h3>
+                  </Col>
+                  <TopFiveCoins topFive={this.state.topFive} />
+                </Row>
+              </Col>
+              {/* Watchlist/ bookmarks */}
+              <WatchList />
+            </Row>
+
+            <Row>
+              {/* Top coins  */}
               <Col xl={8}>
                 <h2>Top by Market Cap</h2>
               </Col>
