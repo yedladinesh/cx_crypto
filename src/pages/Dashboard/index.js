@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 
 //Import Breadcrumb
@@ -7,15 +7,33 @@ import MiniWidgets from "./MiniWidgets";
 import TopFiveCoins from "./TopFiveCoins";
 import LatestCoins from "./LatestCoins";
 import WatchList from "../../components/Common/WatchList";
+import axios from 'axios';
+import { headers } from "../../config/global";
 
-class StarterPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      breadcrumbItems: [
-        { title: "Home", link: "#" },
-        { title: "Dashboard", link: "#" },
-      ],
+function StarterPage(){
+  
+  useEffect(()=>{
+    listCoins();
+  },[]);
+
+  const listCoins  = async () => {
+
+    const response = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d`);
+    const json = await response.json();
+    console.log(json)
+
+    // const response = axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C%2024h%2C%207d%2C%2014d%2C%2030d')
+    // console.log(response)
+    // .then(res =>
+    //   console.log(res.json())
+    // )
+    // .catch((err)=>{
+    //   console.log(err,"error please try again");
+    // })
+
+  }
+
+  const staticData = {
       reports: [
         {
           icon: "ri-stack-line",
@@ -70,9 +88,10 @@ class StarterPage extends Component {
         },
       ],
     };
-  }
+  
+    const [data, setData ] = useState(staticData);
 
-  render() {
+  
     return (
       <React.Fragment>
         <div className="page-content">
@@ -83,19 +102,19 @@ class StarterPage extends Component {
                   <Col md={12}>
                     <h3>Index</h3>
                   </Col>
-                  <MiniWidgets reports={this.state.reports} />
+                  <MiniWidgets reports={data.reports} />
 
                   {/* Top gainers*/}
                   <Col md={12}>
                     <h3>Top Gainers</h3>
                   </Col>
-                  <TopFiveCoins topFive={this.state.topFive} />
+                  <TopFiveCoins topFive={data.topFive} />
 
                   {/* Top losers */}
                   <Col md={12}>
                     <h3>Top Losers</h3>
                   </Col>
-                  <TopFiveCoins topFive={this.state.topFive} />
+                  <TopFiveCoins topFive={data.topFive} />
                 </Row>
               </Col>
               {/* Watchlist/ bookmarks */}
@@ -115,7 +134,6 @@ class StarterPage extends Component {
         </div>
       </React.Fragment>
     );
-  }
 }
 
 export default StarterPage;
