@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Col, Card, CardBody, Media,Row } from "reactstrap";
 
-function TopFiveCoins (props) {
+function TopLoserCoins (props) {
   
     return (
       <React.Fragment>
          
-        {props.topFive.slice(3, 7).map((report, key) => (
+        {props.topFive.reverse().slice(0, 4).map((report, key) => (
           <Col key={key} md={3}>
             <Card>
               <CardBody>
@@ -26,8 +26,7 @@ function TopFiveCoins (props) {
               <CardBody className="border-top py-3">
                 <div className="text-truncate">
                 <span className={"badge badge-soft-"+ (report.high_24h > report.low_24h ? 'success' : 'danger' )+" font-size-11 mr-1"}>
-                    <i className={(report.high_24h > report.low_24h ? "mdi mdi-menu-up" : "mdi-menu-down")+" font-size-14 " } > 
-                      </i> ${report.current_price}
+                    <i className={ (report.high_24h > report.low_24h ? "mdi mdi-menu-up " : "mdi mdi-menu-down" )+ " font-size-14" }> </i> ${report.current_price}
                   </span>
                   <span className="text-muted ml-2">{report.symbol.toUpperCase()}</span>
                 </div>
@@ -39,4 +38,4 @@ function TopFiveCoins (props) {
     );
 }
 
-export default TopFiveCoins;
+export default TopLoserCoins;
